@@ -31,5 +31,23 @@ namespace Banksyboostrap.Utilities
             }
             return true;
         }
+        public static bool AddAccount(BankContext context, Account account)
+        {
+            context.Accounts.Add(account);
+            try
+            {
+                context.SaveChanges();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine($"Error adding account: {e}");
+                return false;
+            }
+            return true;
+        }
+        public static User GetUserByUsername(BankContext context, string username)
+        {
+            return context.Users.FirstOrDefault(u => u.Name == username);
+        }
     }
 }

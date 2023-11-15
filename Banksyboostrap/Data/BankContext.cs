@@ -14,7 +14,7 @@ namespace Banksyboostrap.Data
         public DbSet<Account> Accounts { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Data Source=(localdb)\\.;Initial Catalog=Banksy;Integrated Security=True;Pooling=False");
+            optionsBuilder.UseSqlServer("Data Source=(localdb)\\.;Initial Catalog=Banskytest;Integrated Security=True");
         }
 
     }
